@@ -146,10 +146,11 @@ const TweetGrid = () => {
     <section className="flex overflow-visible relative flex-col gap-16 px-4 py-16 w-full max-w-3xl sm:px-6 md:py-24 lg:py-20 lg:px-8 lg:max-w-6xl items-center lg:gap-12">
       {/* Background Gradient */}
       <div 
-        className="overflow-visible absolute -inset-full select-none z-[-1] opacity-80 translate-y-1/5"
-        style={{
-          background: 'radial-gradient(at 71% 57%, hsla(108,100%,50%,0.3) 0px, transparent 50%), radial-gradient(at 53% 43%, hsla(60,100%,50%,0.3) 0px, transparent 50%), radial-gradient(at 31% 51%, hsla(30,100%,50%,0.17) 0px, transparent 50%)'
-        }}
+        // attempting to fix bug:
+        //className="overflow-visible absolute -inset-full select-none z-[-1] opacity-80 translate-y-1/5"
+        // style={{
+        //   background: 'radial-gradient(at 71% 57%, hsla(108,100%,50%,0.3) 0px, transparent 50%), radial-gradient(at 53% 43%, hsla(60,100%,50%,0.3) 0px, transparent 50%), radial-gradient(at 31% 51%, hsla(30,100%,50%,0.17) 0px, transparent 50%)'
+        // }}
       />
 
       {/* Section Title */}
