@@ -3,81 +3,92 @@ import Image from 'next/image';
 import React from 'react';
 
 const logos = [
-  { src: '/images/brands/vercel.svg', alt: 'Vercel' },
-  { src: '/images/brands/descript.svg', alt: 'Descript' },
-  { src: '/images/brands/angellist.svg', alt: 'AngelList' },
-  { src: '/images/brands/roblox.svg', alt: 'Roblox' },
+  { src: '/images/brands/lloyds.svg', alt: 'Lloyds Bank' },
+  { src: '/images/brands/google.svg', alt: 'Google' },
+  { src: '/images/brands/nhs.svg', alt: 'NHS' },
+  { src: '/images/brands/playstation.svg', alt: 'PlayStation' },
+  { src: '/images/brands/uber.svg', alt: 'Uber' },
+  { src: '/images/brands/moniepoint.svg', alt: 'Moniepoint' },
+  { src: '/images/brands/pearson.svg', alt: 'Pearson' },
+  { src: '/images/brands/revolut.svg', alt: 'Revolut' },
   { src: '/images/brands/replit.svg', alt: 'Replit' },
-  // Add more logos as needed
+  // add more logos if needed
 ];
 
 const LogoCarousel = () => {
   return (
-    <section className="flex overflow-visible relative flex-col items-center px-4 py-16 w-full max-w-3xl sm:px-6 md:py-24 lg:py-20 lg:px-8 lg:max-w-6xl gap-0 pb-0 mt-8 lg:gap-0">
-      <h3 className="mb-8 font-medium text-gray-500">Trusted by individuals at</h3>
-      
-      {/* First Carousel */}
-      <div className="flex overflow-hidden relative">
-        <div className="flex flex-none gap-4 animate-marquee">
+    <section className="relative flex flex-col items-center w-full px-4 py-12 mx-auto max-w-6xl sm:px-6 md:py-16 lg:px-8">
+      {/* Title */}
+      <h3 className="mb-8 text-base font-medium text-gray-500 text-center">
+        Trusted by individuals from
+      </h3>
+
+      {/* First Row: normal marquee (left) */}
+      <div className="relative w-full overflow-hidden py-2">
+        <div className="flex animate-marquee gap-8 whitespace-nowrap">
+          {/* The first set of logos */}
           {logos.map((logo, idx) => (
-            <Image
-              key={idx}
-              src={logo.src}
-              alt={logo.alt}
-              width={240}
-              height={120}
-              className="w-40 opacity-80 md:w-48"
-            />
+            <div key={`marquee-${idx}`} className="flex-shrink-0">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={80}
+                className="h-12 w-auto object-contain opacity-90"
+              />
+            </div>
+          ))}
+          {/* The duplicated set */}
+          {logos.map((logo, idx) => (
+            <div key={`marquee-copy-${idx}`} className="flex-shrink-0">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={80}
+                className="h-12 w-auto object-contain opacity-90"
+              />
+            </div>
           ))}
         </div>
-        <div className="flex flex-none gap-4 animate-marquee">
-          {logos.map((logo, idx) => (
-            <Image
-              key={`second-${idx}`}
-              src={logo.src}
-              alt={logo.alt}
-              width={240}
-              height={120}
-              className="w-40 opacity-80 md:w-48"
-            />
-          ))}
-        </div>
-        
-        {/* Gradient Overlays */}
-        <div className="absolute left-0 w-1/3 h-full bg-gradient-to-l from-transparent to-white" />
-        <div className="absolute right-0 w-1/3 h-full bg-gradient-to-r from-transparent to-white" />
+
+        {/* Subtle overlays on each side */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
       </div>
 
-      {/* Second Carousel (Reverse Direction) */}
-      <div className="flex overflow-hidden relative">
-        <div className="flex flex-none gap-4 animate-marquee-reverse">
+      {/* Second Row: reverse marquee (right) */}
+      <div className="relative w-full overflow-hidden py-2 mt-4">
+        <div className="flex animate-marquee-reverse gap-8 whitespace-nowrap">
+          {/* The first set of logos */}
           {logos.map((logo, idx) => (
-            <Image
-              key={`reverse-${idx}`}
-              src={logo.src}
-              alt={logo.alt}
-              width={240}
-              height={120}
-              className="w-40 opacity-80 md:w-48"
-            />
+            <div key={`reverse-${idx}`} className="flex-shrink-0">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={80}
+                className="h-12 w-auto object-contain opacity-90"
+              />
+            </div>
+          ))}
+          {/* The duplicated set */}
+          {logos.map((logo, idx) => (
+            <div key={`reverse-copy-${idx}`} className="flex-shrink-0">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={80}
+                className="h-12 w-auto object-contain opacity-90"
+              />
+            </div>
           ))}
         </div>
-        <div className="flex flex-none gap-4 animate-marquee-reverse">
-          {logos.map((logo, idx) => (
-            <Image
-              key={`reverse-second-${idx}`}
-              src={logo.src}
-              alt={logo.alt}
-              width={240}
-              height={120}
-              className="w-40 opacity-80 md:w-48"
-            />
-          ))}
-        </div>
-        
-        {/* Gradient Overlays */}
-        <div className="absolute left-0 w-1/3 h-full bg-gradient-to-l from-transparent to-white" />
-        <div className="absolute right-0 w-1/3 h-full bg-gradient-to-r from-transparent to-white" />
+
+        {/* Subtle overlays on each side */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
       </div>
     </section>
   );
