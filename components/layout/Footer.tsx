@@ -49,19 +49,14 @@ const Footer = () => {
         <Link href="/jobs" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
           Careers
         </Link>
-        <Link href="https://www.linkedin.com/company/meetgranola" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
-          LinkedIn
-        </Link>
-        <Link href="https://twitter.com/meetgranola" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
-          X
-        </Link>
+
       </div>
 
       {/* Secondary Footer */}
       <div className="flex flex-col gap-2 items-end mx-auto w-full max-w-7xl md:items-center md:gap-4 md:flex-row text-tertiary">
         {/* Copyright */}
-        <p>© Granola inc {new Date().getFullYear()}</p>
-        <p>Made with ♥︎ in Shoreditch</p>
+        <p>© ChataBubble {new Date().getFullYear()}</p>
+        <p>Made with ♥︎ in Nigeria</p>
         
         <div className="flex-1" />
         
@@ -72,12 +67,7 @@ const Footer = () => {
         <Link href="/policies" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
           Terms of Service
         </Link>
-        <Link href="https://granola-labs.notion.site/Granola-Press-Kit-e8d9449f7768448dabddb473b320deba?pvs=4" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
-          Press kit
-        </Link>
-        <Link href="/macos-license" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
-          License
-        </Link>
+
       </div>
     </footer>
   );
