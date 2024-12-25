@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
           </p>
           <div className="overflow-hidden rounded-lg shadow-lg flex relative flex-col flex-1 h-full backdrop-blur-lg font-mono bg-white border-0.5 w-full">
             {/* Window Controls */}
-            <div className="flex relative flex-none gap-4 items-center pr-1 pl-2 py-[3%] md:h-8">
+            <div className="flex relative flex-none gap-4 items-center pr-1 pl-2 py-2 md:h-8">
               <div className="flex items-center w-full space-x-[3%] md:space-x-2">
                 <div className="rounded-full bg-red-400 w-[3%] md:w-2.5 md:h-2.5 aspect-square" />
                 <div className="rounded-full bg-yellow-300 w-[3%] md:w-2.5 md:h-2.5 aspect-square" />
@@ -60,8 +60,13 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             {/* Card Content */}
-            <div className="relative flex-1 bg-white px-[5%] md:px-8 pt-4 aspect-[4/4.9]">
-              {/* Note Content Here */}
+            <div className="relative flex-1 bg-white px-[5%] md:px-8 pt-4 aspect-[16/10] min-h-[300px]">
+              {/* Demo Content */}
+              <div className="space-y-2">
+                <div className="h-6 bg-gray-100 rounded w-3/4" />
+                <div className="h-6 bg-gray-100 rounded w-1/2" />
+                <div className="h-6 bg-gray-100 rounded w-2/3" />
+              </div>
             </div>
           </div>
         </div>
