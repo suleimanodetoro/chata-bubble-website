@@ -19,3 +19,30 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add masonry grid support */
+@layer utilities {
+  .break-inside {
+    -moz-column-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .columns-1 {
+    columns: 1;
+  }
+  .columns-2 {
+    columns: 2;
+  }
+  .columns-3 {
+    columns: 3;
+  }
+}
+
+/* Optional: Add smooth transitions */
+.tweet-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.tweet-card:hover {
+  transform: translateY(-2px);
+}
