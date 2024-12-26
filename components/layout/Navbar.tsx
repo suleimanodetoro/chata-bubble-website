@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
           </Link>
           */}
           <Link
-            href="/careers"
+            href="/jobs"
             className="hidden select-none px-3 md:flex group items-center font-medium transition-all py-1.5 rounded-full border flex-none hover:bg-black/5 border-transparent text-gray-500"
           >
             Careers
