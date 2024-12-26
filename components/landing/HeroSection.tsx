@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
       <div className="flex flex-col gap-4 justify-center items-center px-6 pt-28 pb-12 lg:pb-16 lg:gap-8 md:pt-40 lg:pt-40">
         {/* Mobile Banner */}
         <a className="px-3 py-1.5 font-medium rounded-full border text-gray-800 hover:bg-neutral-100 transition-colors flex gap-1 items-center" href="/app">
-          🎉 Available for mobile – coming soon!
+          🎉 Cooler learning features – coming soon!
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-gray-500">
             <path fillRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" />
           </svg>
