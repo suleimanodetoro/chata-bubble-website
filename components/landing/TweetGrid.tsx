@@ -89,7 +89,7 @@ const tweets: Tweet[] = [
       avatar: '/images/avatars/nick.jpg',
       verified: true
     },
-    content: 'I love Granola (the AI note taking app)!',
+    content: 'I love Chata Bubble (the AI note taking app)!',
     date: 'Sep 16, 2024'
   },
   {

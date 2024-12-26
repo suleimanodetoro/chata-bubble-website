@@ -24,7 +24,7 @@ const Footer = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-transparent opacity-0 transition-all group-hover:opacity-50 to-white/10" />
             <span className="flex gap-3 items-center">
-              Download Granola for Mac
+              Download Chata Bubble for Mac
             </span>
           </a>
         </div>

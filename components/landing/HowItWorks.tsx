@@ -86,7 +86,7 @@ const HowItWorks = () => {
           {/* Testimonial */}
           <div className="max-w-3xl mx-auto text-center mt-16">
             <blockquote className="text-2xl md:text-3xl italic text-emerald-900">
-              Your app has become indispensable - feels like I'm living in the future.
+              It's become the best part of my day when doom scrolling!
             </blockquote>
             <div className="mt-8 flex items-center justify-center gap-4">
               <img 
@@ -95,8 +95,8 @@ const HowItWorks = () => {
                 className="rounded-full w-12 h-12 bg-gray-200" 
               />
               <div className="text-left">
-                <div className="font-semibold text-lg">John Doe</div>
-                <p className="text-gray-500">CTO, Example Inc</p>
+                <div className="font-semibold text-lg">Kehinde Abereoje</div>
+                <p className="text-gray-500">Founder, Purple Pact</p>
               </div>
             </div>
           </div>
