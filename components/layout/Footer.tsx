@@ -1,8 +1,51 @@
 // components/layout/Footer.tsx
-import React from 'react';
+
+"use client"; // Ensure client-side rendering for dynamic QR code generation
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import QRCode from 'qrcode';
 
 const Footer = () => {
+  // 1) Detect user agent
+  const [isIos, setIsIos] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
+
+  // 2) Store generated QR codes as base64 data URLs
+  const [iosQR, setIosQR] = useState<string>('');
+  const [androidQR, setAndroidQR] = useState<string>('');
+
+  // 3) Your store links (replace these with real links)
+  const iOSLink = 'https://apps.apple.com/your-ios-link';
+  const androidLink = 'https://play.google.com/store/apps/details?id=your-android-link';
+
+  // 4) Detect platform in a client-side effect
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(userAgent)) {
+      setIsIos(true);
+    } else if (/android/.test(userAgent)) {
+      setIsAndroid(true);
+    }
+  }, []);
+
+  // 5) Generate the two QR codes in a client-side effect
+  useEffect(() => {
+    const generateQRCodes = async () => {
+      try {
+        const iosQRDataUrl = await QRCode.toDataURL(iOSLink);
+        const androidQRDataUrl = await QRCode.toDataURL(androidLink);
+
+        setIosQR(iosQRDataUrl);
+        setAndroidQR(androidQRDataUrl);
+      } catch (err) {
+        console.error('Failed to generate QR codes:', err);
+      }
+    };
+
+    generateQRCodes();
+  }, [iOSLink, androidLink]);
+
   return (
     <footer className="px-6 lg:pt-8 pb-4 flex flex-col gap-8 w-full tracking-[0.01em] text-secondary mt-auto bg-neutral-50">
       {/* CTA Section */}
@@ -15,19 +58,60 @@ const Footer = () => {
             Try Granola for a few meetings today. It's free to get started
           </p>
         </div>
-        
-        {/* Download Button */}
-        <div className="flex flex-col">
-          <a 
-            href="#" 
-            className="flex-none bg-gradient-to-br justify-center flex gap-2 items-center from-emerald-400 to-emerald-500 transition-all hover:scale-[101%] transform-gpu text-white rounded-full focus:ring-2 focus:ring-emerald-400 font-medium focus:ring-offset-2 focus:outline-none text-base lg:text-xl shadow-sm group relative overflow-hidden duration-75 z-20 px-6 h-12 lg:h-14 transition-all"
-          >
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent opacity-0 transition-all group-hover:opacity-50 to-white/10" />
-            <span className="flex gap-3 items-center">
-              Download Chata Bubble for Mac
-            </span>
-          </a>
-        </div>
+      </section>
+
+      {/* QR Section: dynamic generation + device detection */}
+      <section className="flex flex-col items-center gap-6"> {/* Increased gap for better spacing */}
+        {/* iOS only */}
+        {isIos && iosQR && (
+          <div className="flex flex-col items-center">
+            <p className="text-sm">Scan this QR Code to get the iOS app:</p>
+            <Link href={iOSLink} target="_blank" rel="noopener noreferrer" className="mt-4">
+              <img
+                src={iosQR}
+                alt="iOS QR Code"
+                className="w-64 h-64 object-contain mb-4" // Consistent size and spacing below
+              />
+            </Link>
+          </div>
+        )}
+
+        {/* Android only */}
+        {isAndroid && androidQR && (
+          <div className="flex flex-col items-center">
+            <p className="text-sm">Scan this QR Code to get the Android app:</p>
+            <Link href={androidLink} target="_blank" rel="noopener noreferrer" className="mt-4">
+              <img
+                src={androidQR}
+                alt="Android QR Code"
+                className="w-64 h-64 object-contain mb-4" // Consistent size and spacing below
+              />
+            </Link>
+          </div>
+        )}
+
+        {/* Desktop or undetected device => show side-by-side buttons */}
+        {!isIos && !isAndroid && (
+          <div className="flex flex-row gap-6 items-center">
+            {/* App Store Button */}
+            <Link href={iOSLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-48 h-16 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 transition-colors">
+              <img
+                src="/app-store.svg"
+                alt="Download on the App Store"
+                className="w-32 h-auto"
+              />
+            </Link>
+
+            {/* Play Store Button */}
+            <Link href={androidLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-48 h-16 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 transition-colors">
+              <img
+                src="/play-store.png"
+                alt="Get it on Google Play"
+                className="w-32 h-auto"
+              />
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* Main Footer */}
@@ -40,16 +124,24 @@ const Footer = () => {
         <div className="flex-1" />
 
         {/* Primary Links */}
-        <Link href="/contact" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
+        <Link 
+          href="/contact"
+          className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4"
+        >
           Contact us
         </Link>
-        <Link href="/security" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
+        <Link 
+          href="/security"
+          className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4"
+        >
           Privacy & Security
         </Link>
-        <Link href="/jobs" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
+        <Link 
+          href="/jobs"
+          className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4"
+        >
           Careers
         </Link>
-
       </div>
 
       {/* Secondary Footer */}
@@ -57,17 +149,22 @@ const Footer = () => {
         {/* Copyright */}
         <p>© ChataBubble {new Date().getFullYear()}</p>
         <p>Made with ♥︎ in Nigeria</p>
-        
+
         <div className="flex-1" />
-        
+
         {/* Legal Links */}
-        <Link href="https://go.granola.so/privacy" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
+        <Link 
+          href="https://go.granola.so/privacy"
+          className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4"
+        >
           Privacy Policy
         </Link>
-        <Link href="/policies" className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4">
+        <Link 
+          href="/policies"
+          className="underline transition-all decoration-transparent hover:decoration-tertiary underline-offset-2 hover:underline-offset-4"
+        >
           Terms of Service
         </Link>
-
       </div>
     </footer>
   );
