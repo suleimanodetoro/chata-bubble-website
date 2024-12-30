@@ -17,9 +17,9 @@ const HeroSection = () => {
             Building AI tools for language learning
           </h1>
           <p className="text-gray-600 text-xl mb-6">
-            Hi! I'm the solo founder from Nigeria, pouring my heart, sweat, and cash into Chata Bubble. 
+            Hi! I&#39;m the solo founder from Nigeria, pouring my heart, sweat, and cash into Chata Bubble. 
             I believe in empowering people to keep their heritage alive and discover new languages. 
-            We've got big dreams—and I'm excited to share them with you.
+            We&#39;ve got big dreams—and I&#39;m excited to share them with you.
           </p>
         </div>
 
@@ -29,9 +29,9 @@ const HeroSection = () => {
           <div className="lg:w-1/2 text-gray-600">
             <p>
               Inspired by computing pioneers of the 60s, 70s, and 80s—and fueled by modern AI—
-              I'm convinced there's never been a better time to build tools that help people learn 
+              I&#39;m convinced there&#39;s never been a better time to build tools that help people learn 
               languages and preserve their cultures. Chata Bubble is my shot at doing something 
-              meaningful for the world, and I can't wait to see where it leads.
+              meaningful for the world, and I can&#39;t wait to see where it leads.
             </p>
           </div>
 

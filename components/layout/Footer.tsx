@@ -48,7 +48,7 @@ const Footer = () => {
             Ready to learn languages the fun way?
           </h1>
           <p className="text-xl font-medium lg:text-2xl text-emerald-700">
-            Give Chata Bubble a try—it's free to get started!
+            Give Chata Bubble a try—it&#39;s free to get started!
           </p>
         </div>
       </section>
