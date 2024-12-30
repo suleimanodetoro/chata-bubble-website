@@ -8,7 +8,9 @@ const MomentumSection = () => {
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-emerald-900">Momentum</h2>
           <p className="text-gray-600">
-            Now is a great time to be joining Granola. Here are a few things that have us excited.
+            Chata Bubble is self-funded by a solo founder from Nigeria. Despite 
+            the modest resources, the passion for keeping languages alive and making 
+            learning fun has already captured an engaged audience.
           </p>
         </div>
 
@@ -18,40 +20,35 @@ const MomentumSection = () => {
             <div className="flex gap-4">
               <DollarSign className="w-8 h-8 text-amber-500 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-emerald-900 mb-2">Investors</h3>
-                <p className="text-gray-600 mb-4">
-                  We've raised over $24M from amazing investors, including:
+                <h3 className="font-bold text-emerald-900 mb-2">Self-Funded & Independent</h3>
+                <p className="text-gray-600">
+                  No big VCs here—just personal passion and sweat equity. That means 
+                  full freedom to build what's genuinely valuable for language learners, 
+                  without external pressure.
                 </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Top tier VC funds: Lightspeed, Betaworks, Firstminute Capital</li>
-                  <li>• Mike Krieger, cofounder of Instagram</li>
-                  <li>• Soleio: Early facebook designer. Backer of Figma, Framer, Vercel, and more</li>
-                  <li>• David Lieb: YC partner, founder of Bump & creator of Google Photos</li>
-                </ul>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Heart className="w-8 h-8 text-red-500 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-emerald-900 mb-2">Passionate users who talk to us every day</h3>
-                <p className="text-gray-600 mb-4">
-                  We've built a vibrant community of early users, and Granola is used and loved by some of product-building heroes:
+                <h3 className="font-bold text-emerald-900 mb-2">A Growing Community of Learners</h3>
+                <p className="text-gray-600">
+                  Word is spreading among students, travelers, and anyone looking to 
+                  preserve local dialects. Hearing user success stories keeps this 
+                  journey fueled with heart.
                 </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Guillermo Rauch: founder of Vercel</li>
-                  <li>• Nat Friedman: ex-CEO of Github</li>
-                  <li>• Des Traynor: co-founder of Intercom</li>
-                </ul>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Rocket className="w-8 h-8 text-emerald-500 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-emerald-900 mb-2">We're growing</h3>
+                <h3 className="font-bold text-emerald-900 mb-2">Cultural Mission</h3>
                 <p className="text-gray-600">
-                  The Granola app has high engagement with its users, and is spreading virally within companies that use it
+                  Chata Bubble helps endangered languages stay alive by letting young 
+                  people practice them daily. That’s real momentum and real impact—no 
+                  matter how big or small the budget.
                 </p>
               </div>
             </div>
@@ -59,73 +56,29 @@ const MomentumSection = () => {
             <div className="flex gap-4">
               <BoomBox className="w-8 h-8 text-purple-500 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-emerald-900 mb-2">Still lots to figure out</h3>
+                <h3 className="font-bold text-emerald-900 mb-2">The Road Ahead</h3>
                 <p className="text-gray-600">
-                  We're still early in our journey. There's plenty of space to make big moves with the product and have a huge impact on the trajectory of the company
+                  There’s so much left to explore—voice recognition, new languages, 
+                  and deeper AI interactions. This is just the beginning, and I’m excited 
+                  for every next step.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Open Roles */}
+          {/* Right Column - (No Open Roles) */}
           <div>
-            <h3 className="text-2xl font-bold text-emerald-900 mb-6">Open roles</h3>
-            <div className="space-y-4">
-              <RoleCard
-                title="Founding Marketer"
-                location="London, UK"
-                icon="🎯"
-              />
-              <RoleCard
-                title="Product Engineer"
-                location="London, UK"
-                icon="⚡"
-              />
-              <RoleCard
-                title="iOS Engineer"
-                location="London, UK"
-                icon="🍎"
-              />
-              <RoleCard
-                title="AI Engineer"
-                location="London, UK"
-                icon="🤖"
-              />
-              <RoleCard
-                title="Founding Customer Experience Lead"
-                location="London, UK"
-                icon="💫"
-              />
-            </div>
-
-            <div className="mt-8 text-center">
-              <p className="text-gray-600">
-                Interested but don't see a match? Email us, we're always interested in hearing from passionate folks:
-                <a href="mailto:hiring@granola.so" className="text-emerald-600 hover:underline ml-1">
-                  hiring@granola.so
-                </a>
-              </p>
-            </div>
+            <h3 className="text-2xl font-bold text-emerald-900 mb-6">Staying Solo—for Now</h3>
+            <p className="text-gray-600">
+              I’m not currently hiring, but I love meeting people who share the vision 
+              of bridging cultural gaps through language. If you want to learn more or 
+              just say hi, feel free to reach out!
+            </p>
           </div>
         </div>
       </div>
     </section>
   );
 };
-
-const RoleCard = ({ title, location, icon }: { title: string; location: string; icon: string }) => (
-  <a 
-    href="#" 
-    className="block p-4 rounded-lg border hover:shadow-md transition-shadow bg-white"
-  >
-    <div className="flex items-center gap-3">
-      <span className="text-2xl">{icon}</span>
-      <div>
-        <h4 className="font-medium text-emerald-900">{title}</h4>
-        <p className="text-gray-500 text-sm">{location}</p>
-      </div>
-    </div>
-  </a>
-);
 
 export default MomentumSection;

@@ -1,4 +1,5 @@
 // components/landing/HeroSection.tsx
+"use client"
 import React from 'react';
 
 const HeroSection: React.FC = () => {
@@ -25,22 +26,33 @@ const HeroSection: React.FC = () => {
         {/* Main Heading */}
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-center leading-[0.9]">
           <span className="text-gray-400">The</span>{' '}
-          <span className="text-emerald-900">AI notepad</span>{' '}
-          <span className="text-gray-400">for people in</span>
+          <span className="text-emerald-900">AI buddy</span>{' '}
+          <span className="text-gray-400">for language learning</span>
           <br className="hidden md:block" />
-          <span className="text-emerald-900">back-to-back meetings</span>
+          <span className="text-emerald-900">at the Price of Lunch!</span>
         </h1>
 
-        <h2 className="px-14 w-full max-w-2xl text-lg font-medium leading-tight text-center lg:text-2xl text-gray-500">
-          Takes your raw meeting notes and makes them awesome
+        <h2 className="px-4 md:px-8 w-full max-w-6xl text-lg font-medium leading-tight text-center lg:text-2xl text-gray-500">
+
+Get fluent fast with your playful AI buddy—at 4x less the cost of the usual apps. Practice real-life convos, perfect your accent, and rediscover hidden gems in Nigerian languages!
         </h2>
 
         {/* Download Button */}
-        <a href="#" className="mt-4 flex items-center px-6 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white rounded-full font-medium transition-all hover:scale-[101%] shadow-sm">
-          <span className="flex gap-2 items-center">
-            Download Now
-          </span>
-        </a>
+        <a 
+  href="#download-section" 
+  className="mt-4 flex items-center px-6 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white rounded-full font-medium transition-all hover:scale-[101%] shadow-sm"
+  onClick={(e) => {
+    e.preventDefault();
+    const downloadSection = document.getElementById("download-section");
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  <span className="flex gap-2 items-center">
+    Download Now
+  </span>
+</a>
       </div>
 
       {/* Demo Cards Container */}
@@ -48,7 +60,7 @@ const HeroSection: React.FC = () => {
         {/* Original Notes Card */}
         <div className="flex flex-col gap-1 items-center w-3/5 md:gap-2 md:w-[95%] md:ml-[3%]">
           <p className="text-xs font-medium sm:text-base md:text-lg text-gray-500">
-            Your notes + transcript
+            Learnning + Machine Learning
           </p>
           <div className="overflow-hidden rounded-lg shadow-lg flex relative flex-col flex-1 h-full backdrop-blur-lg font-mono bg-white border-0.5 w-full">
             {/* Window Controls */}

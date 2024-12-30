@@ -1,3 +1,4 @@
+// src/components/HeroSection.jsx
 import React from 'react';
 import Image from 'next/image';
 
@@ -5,57 +6,65 @@ const HeroSection = () => {
   return (
     <section className="pt-24 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Work with us tag */}
+        {/* Intro Tag */}
         <span className="text-emerald-900 font-medium mb-6 block">
-          Work with us
+          Chata Bubble
         </span>
 
         {/* Hero Text */}
         <div className="max-w-3xl mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-emerald-900 mb-6">
-            Build tools that help humans think better
+            Building AI tools for language learning
           </h1>
-          <p className="text-gray-600 text-xl">
-            We are a small, tight-knit team with massive ambitions. If your heart jumps a little when you read what's below, reach out.
+          <p className="text-gray-600 text-xl mb-6">
+            Hi! I'm the solo founder from Nigeria, pouring my heart, sweat, and cash into Chata Bubble. 
+            I believe in empowering people to keep their heritage alive and discover new languages. 
+            We've got big dreams—and I'm excited to share them with you.
           </p>
         </div>
 
-        {/* Image Stack */}
-        <div className="relative h-[400px] mb-16">
-          <div className="absolute right-0 flex gap-4 transform -rotate-6">
-            <Image 
-              src="/api/placeholder/300/200" 
-              alt="Vintage computer" 
-              width={300}
-              height={200}
-              className="rounded-lg shadow-lg"
-            />
-            <Image 
-              src="/api/placeholder/300/200" 
-              alt="Code editor" 
-              width={300}
-              height={200}
-              className="rounded-lg shadow-lg"
-            />
-            <Image 
-              src="/api/placeholder/300/200" 
-              alt="Team photo" 
-              width={300}
-              height={200}
-              className="rounded-lg shadow-lg"
-            />
+        {/* Content Layout with Images and Text Side by Side */}
+        <div className="flex flex-col lg:flex-row gap-8 mb-24">
+          {/* Vision Text */}
+          <div className="lg:w-1/2 text-gray-600">
+            <p>
+              Inspired by computing pioneers of the 60s, 70s, and 80s—and fueled by modern AI—
+              I'm convinced there's never been a better time to build tools that help people learn 
+              languages and preserve their cultures. Chata Bubble is my shot at doing something 
+              meaningful for the world, and I can't wait to see where it leads.
+            </p>
           </div>
-        </div>
 
-        {/* Vision Text */}
-        <div className="max-w-2xl mb-24 text-gray-600">
-          <p className="mb-8">
-            We've always looked up to the computing pioneers of the 60s, 70s and 80s. 
-            With the advent of LLMs, it's now the most exciting time for tool building since 
-            Engelbart gave his demo in 1968. All of us on the team feel like our best work 
-            is ahead of us, that we haven't made our dent yet. We are pinching ourselves 
-            that we get to work on this product, with this team, at this time - this is our shot.
-          </p>
+
+{/* Image Stack */}
+<div className="lg:w-1/2 relative">
+  {/* Desktop View - Tilted Stack */}
+  <div className="hidden lg:block relative h-[300px]">
+    <div className="absolute right-0 flex gap-2 transform -rotate-12">
+      <Image
+        src="/images/idea.png"
+        alt="Idea Cup"
+        width={180}
+        height={120}
+        className="rounded-lg shadow-lg"
+      />
+      <Image
+        src="/images/davinci.png"
+        alt="Davinci Statue"
+        width={180}
+        height={120}
+        className="rounded-lg shadow-lg"
+      />
+      <Image
+        src="/images/vintage-pc.png"
+        alt="Vintage Computer"
+        width={180}
+        height={120}
+        className="rounded-lg shadow-lg"
+      />
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>

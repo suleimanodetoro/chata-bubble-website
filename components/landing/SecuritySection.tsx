@@ -1,6 +1,15 @@
-import React from 'react';
-import Image from 'next/image';
-import { Shield, Server, UserCircle2, Lock } from 'lucide-react';
+"use client";
+
+import React from "react";
+import { Server, UserCircle2, Lock } from "lucide-react";
+import { toast } from "react-hot-toast";
+
+function handleLinkClick(e: React.MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault();
+  toast.error(
+    "Sorry, this page is currently down. Please check back later!"
+  );
+}
 
 const SecuritySection = () => {
   return (
@@ -8,101 +17,105 @@ const SecuritySection = () => {
       {/* Header */}
       <div className="mb-16">
         <h1 className="text-4xl lg:text-5xl font-bold text-emerald-900 mb-6">
-          Security, privacy, and<br />how it all works
+          Security, privacy, and
+          <br />
+          what we’re still figuring out
         </h1>
         <p className="text-lg text-gray-600">
-          Tools like Granola make life easier, but meetings contain some of your most sensitive data. 
-          Treating this with the respect it deserves is of utmost importance to us.
+          Chata Bubble is all about fun language learning. But even fun tools
+          should respect your privacy. As a solo founder from Nigeria, I’m still
+          learning the ropes on compliance—and I don’t claim to be an expert.
+          Below is where we stand now, and how we’re keeping your data safe.
         </p>
-      </div>
-
-      {/* The Basics Section */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-semibold text-emerald-900 mb-6">The basics</h2>
-        <div className="space-y-6 text-gray-600">
-          <p>
-            Granola is a Mac app, a lot like Apple Notes or Notion. It requires Google Workspace 
-            login and integrates with your calendar.
-          </p>
-          <p>
-            You have to manually start Granola for a meeting (it won't auto-join or auto-record anything). 
-            Granola then accesses the system audio on your computer and transcribes it. It does not add 
-            a bot to your video call.
-          </p>
-          <p>
-            As a result, Granola works with any meeting platform. Zoom, Meet, Teams, you name it.
-          </p>
-          <p>
-            Granola uses best-in-class transcription providers (like Deepgram and Assembly) and AI 
-            providers (like OpenAI and Anthropic) to summarize your meeting. We are constantly switching 
-            to the best option as soon as new models come out.
-          </p>
-        </div>
       </div>
 
       {/* Compliance Badges */}
       <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* Redesigned SOC-2 Card */}
         <div className="bg-white rounded-lg p-6 border flex items-start gap-4">
-          <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-            <span className="text-lg font-semibold">SOC-2</span>
+          <div className="w-12 h-12 rounded-full border border-dashed border-emerald-600 flex items-center justify-center flex-shrink-0">
+            <span className="text-sm font-semibold text-emerald-600">
+              SOC-2
+            </span>
           </div>
-          <div>
-            <h3 className="font-semibold mb-1">SOC-2</h3>
-            <p className="text-gray-600">We're working with Vanta to achieve full SOC-2 compliance</p>
-            <a href="#" className="text-emerald-600 hover:underline mt-2 inline-block">
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-emerald-900">SOC-2</h3>
+              <span className="bg-gray-200 text-gray-600 text-xs font-medium px-3 py-1 rounded-full">
+                IN PROGRESS
+              </span>
+            </div>
+            <p className="text-gray-600 mt-2">
+              We’re collaborating with Vanta to achieve full SOC-2 compliance,
+              ensuring your data is handled with care and security.
+            </p>
+            <a
+              href="#"
+              className="text-emerald-600 hover:underline mt-2 inline-block"
+              onClick={handleLinkClick}
+            >
               View our trust page
             </a>
           </div>
         </div>
 
+        {/* GDPR-ish Card */}
         <div className="bg-white rounded-lg p-6 border flex items-start gap-4">
-          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-            <Image src="/api/placeholder/48/48" alt="EU Flag" width={32} height={32} className="rounded-full" />
-          </div>
-          <div>
-            <h3 className="font-semibold mb-1">GDPR</h3>
-            <p className="text-gray-600">
-              We have incorporated GDPR standards into data practices to make sure our customers 
-              have confidence in our security.
-            </p>
-          </div>
-        </div>
+  {/* Icon Section with Flag */}
+  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+    <span role="img" aria-label="EU Flag" className="text-lg">🇪🇺</span>
+  </div>
+
+  {/* Content Section */}
+  <div className="flex-1">
+    <h3 className="text-lg font-semibold text-emerald-900">GDPR-ish</h3>
+    <p className="text-gray-600 mt-2">
+      I’m trying to incorporate GDPR standards and give users confidence, but I’m not a lawyer. 
+      Your data is encrypted, and you can delete it whenever you want.
+    </p>
+  </div>
+</div>
+
       </div>
 
       {/* Security Features */}
       <div className="space-y-12">
         <SecurityFeature
           icon={<Server className="w-6 h-6" />}
-          title="No recording"
-          description="Granola doesn't save the audio from calls - it transcribes in real time 
-          and only stores the transcript (and any notes you provide) from a call."
+          title="No hidden recordings"
+          description="Chata Bubble only stores your chat transcript and AI persona. No audio or 
+            secret logs. What you see is what we have."
         />
 
         <SecurityFeature
           icon={<UserCircle2 className="w-6 h-6" />}
-          title="You control who sees your notes"
-          description="As a user, you control who sees your notes. Notes are private by default, 
-          until you choose to share them with others. You can delete individual notes, or request 
-          deletion of all your data at any time"
+          title="You decide who sees your chats"
+          description="Your AI chats are private unless you explicitly share them. You can delete 
+            your data anytime, or request a full purge."
         />
 
         <SecurityFeature
           icon={<Lock className="w-6 h-6" />}
-          title="Everything stored in industry standard, encrypted infrastructure"
-          description="Notes are stored in our US-hosted AWS Virtual Private Cloud. They encrypted 
-          at rest and in transit and are backed up daily. Granola is built and maintained by our 
-          top-tier engineering team, who've built scalable infrastructure for companies like Apple, 
-          Amazon, Google, and Meta."
+          title="Encrypted & Minimally Stored"
+          description="All data is encrypted in transit and at rest, hosted in a secure US-based 
+            AWS VPC. As a solo founder, I'm the only one with admin access, and I'm serious 
+            about keeping it safe."
         />
 
         <div className="pt-8">
-          <h3 className="text-xl font-semibold text-emerald-900 mb-4">We're here if you need us</h3>
+          <h3 className="text-xl font-semibold text-emerald-900 mb-4">
+            I’m here if you need me
+          </h3>
           <p className="text-gray-600">
-            If you're curious about how we're handling your data, or have any questions, please 
-            reach out to us at{' '}
-            <a href="mailto:sales@granola.so" className="text-emerald-600 hover:underline">
-              sales@granola.so
+            If you have questions on how your data is handled, email me directly
+            at{" "}
+            <a
+              href="mailto:sales@chata-bubble.com"
+              className="text-emerald-600 hover:underline"
+            >
+              sales@chata-bubble.com
             </a>
+            .
           </p>
         </div>
       </div>
@@ -110,16 +123,18 @@ const SecuritySection = () => {
   );
 };
 
-const SecurityFeature = ({ icon, title, description }: { 
+const SecurityFeature = ({
+  icon,
+  title,
+  description,
+}: {
   icon: React.ReactNode;
   title: string;
   description: string;
 }) => (
   <div>
     <div className="flex items-center gap-3 mb-2">
-      <div className="text-emerald-600">
-        {icon}
-      </div>
+      <div className="text-emerald-600">{icon}</div>
       <h3 className="text-xl font-semibold text-emerald-900">{title}</h3>
     </div>
     <p className="text-gray-600 ml-9">{description}</p>

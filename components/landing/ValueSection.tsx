@@ -7,28 +7,28 @@ const ValuesSection = () => {
         {/* Humans building for humans */}
         <div>
           <h2 className="text-2xl font-bold text-emerald-900 mb-4">
-            Humans building for humans
+            Solo founder, human focus
           </h2>
           <p className="text-gray-600">
-            Building a great product is rare. It takes a lot of care, love, and effort 
-            on the part of the people building it. Building a great company takes the same. 
-            We are a group of humans that have fun together, that care about each other, 
-            and that make each other better. We put a lot of ourselves into Granola. 
-            We have all worked at companies that didn't feel human, so appreciate how 
-            special this opportunity is.
+            Chata Bubble isn’t backed by big teams or massive budgets—it's built 
+            by one person with a passion for language, culture, and communication. 
+            I put a lot of myself into this product because I believe that the best 
+            way to build something meaningful is to stay connected to the people 
+            using it. It's a personal mission to help people embrace their roots 
+            and discover new ways of speaking.
           </p>
         </div>
 
-        {/* Designed in London */}
+        {/* Designed in Nigeria */}
         <div>
           <h2 className="text-2xl font-bold text-emerald-900 mb-4">
-            Designed in London, built for the world
+            Designed in Nigeria, built for the world
           </h2>
           <p className="text-gray-600">
-            We come from (and admire) Silicon Valley, but we believe in London. 
-            We're living through a transformational era where new ideas and interfaces 
-            need to be invented, and London punches above its weight in design, talent, 
-            and taste.
+            Being from Nigeria gives me a unique perspective on the importance of 
+            preserving local dialects and bridging language barriers. But Chata Bubble 
+            aims to serve learners around the globe, no matter who you are or where you 
+            live. After all, languages connect us all.
           </p>
         </div>
       </div>

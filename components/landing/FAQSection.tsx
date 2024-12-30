@@ -1,56 +1,49 @@
+"use client";
+
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: 'What admin controls will I have?',
-    answer: 'Admin information here...'
+    question: 'How secure is Chata Bubble?',
+    answer: 'Chats are encrypted, minimal user data is stored, and data can be deleted anytime.'
   },
   {
-    question: 'Is Granola secure / SOC-2 / HIPPA compliant?',
-    answer: 'Security information here...'
+    question: 'Are there any discounts for students or non-profits?',
+    answer: 'Discounts are offered on a case-by-case basis. Reach out for more information.'
   },
   {
-    question: 'How does adding and removing team members work?',
-    answer: 'Team management information here...'
+    question: 'What happens to my progress if I cancel?',
+    answer: 'No progress is lost. All transcripts and stats remain, but access to AI features is limited.'
   },
   {
-    question: 'Do you offer a referral program?',
-    answer: 'Referral program information here...'
+    question: 'Can I switch from monthly to annual?',
+    answer: 'Yes. Billing cycles are flexible. Switch anytime in account settings.'
   },
   {
-    question: 'Discounts for edu/non-profit?',
-    answer: 'Discount information here...'
+    question: 'Is there a free plan?',
+    answer: 'No free plan at this time, but we do offer a 7-day money-back guarantee.'
   },
   {
-    question: 'How does the free trial work?',
-    answer: 'Free trial information here...'
+    question: 'How do I delete my account?',
+    answer: 'All account actions, including deletion, are found in the user menu settings.'
   },
   {
-    question: 'Where are my invoices?',
-    answer: 'Invoice information here...'
-  },
-  {
-    question: 'Can I cancel?',
-    answer: 'Cancellation information here...'
-  },
-  {
-    question: 'Can I pay by invoice?',
-    answer: 'Payment information here...'
+    question: 'Are voice features included?',
+    answer: 'Voice checks and feedback are included in both plans, with ongoing improvements.'
   }
 ];
 
-const FAQSection = () => {
+const FAQSection: React.FC = () => {
   return (
     <section className="py-24 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl font-bold text-emerald-900 text-center mb-4">
-          Questions & answers
+          Frequently Asked Questions
         </h2>
         
         <p className="text-center text-gray-600 mb-16">
-          Questions about security, privacy, or how it all works?{' '}
-          <a href="#" className="text-emerald-900 underline">Read more here</a>
+          Learn more about security, billing, or general usage below.
         </p>
 
         <div className="space-y-4">
