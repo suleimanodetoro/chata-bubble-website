@@ -1,3 +1,4 @@
+// components/landing/TeamSection.tsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,20 +17,20 @@ const TeamSection = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 overflow-hidden rounded-full">
+          <div className="w-16 h-16 overflow-hidden rounded-full relative">
             <Image
-              src={`/images/suleiman.jpg`}
-              alt="Founder"
-              width={64}
-              height={64}
+              src="/images/suleiman.JPG"
+              alt="Suleiman Odetoro"
+              fill
               className="object-cover"
+              sizes="(max-width: 768px) 64px, 64px"
+              priority
             />
           </div>
           <div>
             <h3 className="font-medium text-emerald-900">Suleiman Odetoro</h3>
             <p className="text-gray-600 text-sm">Founder</p>
             <div className="flex gap-2 mt-1">
-              {/* Example socials; remove if you have none */}
               <Link href="https://twitter.com/yourhandle" className="text-gray-500 hover:text-gray-700">
                 𝕏
               </Link>

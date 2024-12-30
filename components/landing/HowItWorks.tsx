@@ -1,5 +1,7 @@
+// components/landing/HowItWorks.tsx
 "use client"
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 // 1) Simple array of words to animate
 const WORDS = ['sparks', 'guides', 'tracks', 'enriches'];
@@ -46,10 +48,6 @@ const HowItWorks = () => {
             <div className="relative p-6 rounded-xl border shadow-lg bg-white">
               <h2 className="text-xl font-semibold lg:text-2xl mb-6">
                 <span>Create Your Persona</span>{' '}
-                {/* 
-                  We added z-index classes to keep bubble behind (z-0) 
-                  and text on top (z-10).
-                */}
                 <span className="inline-flex relative gap-2 items-baseline pr-2 pl-8 rounded-full text-emerald-900">
                   {/* Green bubble background + icon */}
                   <div className="flex absolute inset-y-0 -inset-x-1 items-center pl-2 rounded-full bg-emerald-200 z-0">
@@ -137,14 +135,19 @@ const HowItWorks = () => {
           {/* Testimonial */}
           <div className="max-w-3xl mx-auto text-center mt-16">
             <blockquote className="text-2xl md:text-3xl italic text-emerald-900">
-              “It&#39;s become the best part of my day—learning my grandma&#39;s language has never been this fun!”
+              "It&#39;s become the best part of my day—learning my grandma&#39;s language has never been this fun!"
             </blockquote>
             <div className="mt-8 flex items-center justify-center gap-4">
-              <img
-                src="/images/kehinde.jpeg"
-                alt="User"
-                className="rounded-full w-12 h-12 bg-gray-200"
-              />
+              <div className="relative w-12 h-12">
+                <Image
+                  src="/images/kehinde.JPEG"
+                  alt="Kehinde Abereoje"
+                  fill
+                  className="rounded-full object-cover"
+                  priority
+                  sizes="48px"
+                />
+              </div>
               <div className="text-left">
                 <div className="font-semibold text-lg">Kehinde Abereoje</div>
                 <p className="text-gray-500">Founder, Purple Pact</p>
