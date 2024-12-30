@@ -10,7 +10,7 @@ const TeamSection = () => {
           <h2 className="text-3xl font-bold text-emerald-900">Behind Chata Bubble</h2>
           <p className="text-gray-600">
             Chata Bubble is created and led by a solo founder from Nigeria.
-            I'm currently not hiring—but I'm always open to connecting with
+            I&#39;m currently not hiring—but I&#39;m always open to connecting with
             like-minded folks who share a passion for languages and culture.
           </p>
         </div>

@@ -10,11 +10,11 @@ const ValuesSection = () => {
             Solo founder, human focus
           </h2>
           <p className="text-gray-600">
-            Chata Bubble isn’t backed by big teams or massive budgets—it's built 
+            Chata Bubble isn&#39;t backed by big teams or massive budgets—it&#39;s built 
             by one person with a passion for language, culture, and communication. 
             I put a lot of myself into this product because I believe that the best 
             way to build something meaningful is to stay connected to the people 
-            using it. It's a personal mission to help people embrace their roots 
+            using it. It&#39;s a personal mission to help people embrace their roots 
             and discover new ways of speaking.
           </p>
         </div>

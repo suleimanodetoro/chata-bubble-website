@@ -23,7 +23,7 @@ const MomentumSection = () => {
                 <h3 className="font-bold text-emerald-900 mb-2">Self-Funded & Independent</h3>
                 <p className="text-gray-600">
                   No big VCs here—just personal passion and sweat equity. That means 
-                  full freedom to build what's genuinely valuable for language learners, 
+                  full freedom to build what&#39;s genuinely valuable for language learners, 
                   without external pressure.
                 </p>
               </div>
