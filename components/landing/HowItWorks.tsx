@@ -135,7 +135,7 @@ const HowItWorks = () => {
           {/* Testimonial */}
           <div className="max-w-3xl mx-auto text-center mt-16">
             <blockquote className="text-2xl md:text-3xl italic text-emerald-900">
-              "It&#39;s become the best part of my day—learning my grandma&#39;s language has never been this fun!"
+              &ldquo;It&apos;s become the best part of my day—learning my grandma&apos;s language has never been this fun!&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center justify-center gap-4">
               <div className="relative w-12 h-12">
