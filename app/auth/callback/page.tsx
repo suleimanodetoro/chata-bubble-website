@@ -1,6 +1,7 @@
+// app/auth/callback/page.tsx
 'use client';
 
-import { Suspense, useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
@@ -9,7 +10,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-function AuthCallback() {
+function CallbackHandler() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -27,11 +28,9 @@ function AuthCallback() {
           if (error) throw error;
         }
 
-        // Redirect back to app
         if (redirect) {
           window.location.href = decodeURIComponent(redirect);
         } else {
-          // Fallback
           window.location.href = 'chatabubble://auth/login?verified=true';
         }
       } catch (error) {
@@ -52,10 +51,16 @@ function AuthCallback() {
   );
 }
 
-export default function SuspendedAuthCallback() {
+export default function AuthCallback() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <AuthCallback />
+    <Suspense fallback={
+      <div className="rounded-lg bg-white p-8 shadow-md">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Loading...</h1>
+        </div>
+      </div>
+    }>
+      <CallbackHandler />
     </Suspense>
   );
 }

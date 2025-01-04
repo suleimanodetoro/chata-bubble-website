@@ -1,7 +1,7 @@
 // app/auth/reset-password/page.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
@@ -10,7 +10,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export default function ResetPassword() {
+function ResetPasswordForm() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -29,7 +29,6 @@ export default function ResetPassword() {
 
       setMessage('Password updated successfully. Redirecting to app...');
       
-      // Get redirect URL from params or use default
       const redirect = searchParams.get('redirect') || 'chatabubble://auth/login?reset=true';
       
       setTimeout(() => {
@@ -78,5 +77,19 @@ export default function ResetPassword() {
         )}
       </form>
     </div>
+  );
+}
+
+export default function ResetPassword() {
+  return (
+    <Suspense fallback={
+      <div className="rounded-lg bg-white p-8 shadow-md">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Loading...</h1>
+        </div>
+      </div>
+    }>
+      <ResetPasswordForm />
+    </Suspense>
   );
 }
