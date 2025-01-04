@@ -1,7 +1,6 @@
-// app/auth/callback/page.tsx
 'use client';
 
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
@@ -10,7 +9,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export default function AuthCallback() {
+function AuthCallback() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -50,5 +49,13 @@ export default function AuthCallback() {
         <p className="text-gray-600">You will be redirected back to the app shortly.</p>
       </div>
     </div>
+  );
+}
+
+export default function SuspendedAuthCallback() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthCallback />
+    </Suspense>
   );
 }
