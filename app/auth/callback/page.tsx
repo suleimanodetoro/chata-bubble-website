@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
@@ -12,7 +12,6 @@ const supabase = createClient(
 
 export default function AuthCallback() {
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   useEffect(() => {
     const redirect = searchParams.get('redirect');
