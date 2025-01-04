@@ -1,5 +1,10 @@
 // app/auth/layout.tsx
-export default function AuthLayout({
+export const metadata = {
+    title: 'Authentication - Chata Bubble',
+    description: 'Authenticate with Chata Bubble',
+  };
+  
+  export default function AuthLayout({
     children,
   }: {
     children: React.ReactNode;

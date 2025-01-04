@@ -10,11 +10,6 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export const metadata = {
-  title: 'Reset Password - Chata Bubble',
-  description: 'Reset your password for Chata Bubble',
-};
-
 export default function ResetPassword() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);

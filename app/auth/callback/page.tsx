@@ -10,11 +10,6 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export const metadata = {
-  title: 'Email Verification - Chata Bubble',
-  description: 'Verify your email address for Chata Bubble',
-};
-
 export default function AuthCallback() {
   const searchParams = useSearchParams();
   const router = useRouter();
