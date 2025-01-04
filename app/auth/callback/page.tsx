@@ -1,43 +1,59 @@
-// pages/auth/callback.tsx
+// app/auth/callback/page.tsx
+'use client';
+
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { supabase } from '@/lib/supabase';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+export const metadata = {
+  title: 'Email Verification - Chata Bubble',
+  description: 'Verify your email address for Chata Bubble',
+};
 
 export default function AuthCallback() {
+  const searchParams = useSearchParams();
   const router = useRouter();
 
   useEffect(() => {
-    const { hash } = window.location;
-    if (hash) {
-      // Get the access token from the URL
-      const token = hash.substring(1);
-      handleCallback(token);
-    }
-  }, []);
+    const redirect = searchParams.get('redirect');
+    const token = searchParams.get('token_hash');
 
-  const handleCallback = async (token: string) => {
-    try {
-      // Verify the token
-      const { error } = await supabase.auth.verifyOtp({
-        token_hash: token,
-        type: 'email'
-      });
+    const handleCallback = async () => {
+      try {
+        if (token) {
+          const { error } = await supabase.auth.verifyOtp({
+            token_hash: token,
+            type: 'email'
+          });
 
-      if (error) throw error;
+          if (error) throw error;
+        }
 
-      // Redirect back to app using deep linking
-      window.location.href = 'chatabubble://auth/login?verified=true';
-    } catch (error) {
-      console.error('Error during verification:', error);
-      // Handle error - maybe show an error page
-    }
-  };
+        // Redirect back to app
+        if (redirect) {
+          window.location.href = decodeURIComponent(redirect);
+        } else {
+          // Fallback
+          window.location.href = 'chatabubble://auth/login?verified=true';
+        }
+      } catch (error) {
+        console.error('Error during verification:', error);
+      }
+    };
+
+    handleCallback();
+  }, [searchParams]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="rounded-lg bg-white p-8 shadow-md">
       <div className="text-center">
         <h1 className="text-2xl font-bold mb-4">Verifying your email...</h1>
-        <p>Please wait while we verify your email address.</p>
+        <p className="text-gray-600">You will be redirected back to the app shortly.</p>
       </div>
     </div>
   );

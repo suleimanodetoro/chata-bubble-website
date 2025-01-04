@@ -1,11 +1,25 @@
-// pages/auth/reset-password.tsx
+// app/auth/reset-password/page.tsx
+'use client';
+
 import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { useSearchParams } from 'next/navigation';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+export const metadata = {
+  title: 'Reset Password - Chata Bubble',
+  description: 'Reset your password for Chata Bubble',
+};
 
 export default function ResetPassword() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const searchParams = useSearchParams();
 
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,9 +34,11 @@ export default function ResetPassword() {
 
       setMessage('Password updated successfully. Redirecting to app...');
       
-      // Redirect back to app
+      // Get redirect URL from params or use default
+      const redirect = searchParams.get('redirect') || 'chatabubble://auth/login?reset=true';
+      
       setTimeout(() => {
-        window.location.href = 'chatabubble://auth/login?reset=true';
+        window.location.href = decodeURIComponent(redirect);
       }, 2000);
     } catch (error) {
       console.error('Error resetting password:', error);
@@ -33,40 +49,39 @@ export default function ResetPassword() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow">
-        <h1 className="text-2xl font-bold mb-6">Reset Your Password</h1>
-        
-        <form onSubmit={handleReset}>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-medium mb-2">
-              New Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border rounded"
-              required
-            />
-          </div>
+    <div className="rounded-lg bg-white p-8 shadow-md">
+      <h1 className="text-2xl font-bold mb-6">Reset Your Password</h1>
+      
+      <form onSubmit={handleReset} className="space-y-4">
+        <div>
+          <label htmlFor="password" className="block text-sm font-medium mb-2">
+            New Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+            minLength={6}
+          />
+        </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 disabled:opacity-50"
-          >
-            {loading ? 'Updating...' : 'Update Password'}
-          </button>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50 transition-colors"
+        >
+          {loading ? 'Updating...' : 'Update Password'}
+        </button>
 
-          {message && (
-            <p className="mt-4 text-center text-sm">
-              {message}
-            </p>
-          )}
-        </form>
-      </div>
+        {message && (
+          <p className="mt-4 text-center text-sm text-gray-600">
+            {message}
+          </p>
+        )}
+      </form>
     </div>
   );
 }
