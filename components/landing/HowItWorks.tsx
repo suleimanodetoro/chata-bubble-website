@@ -43,9 +43,9 @@ const HowItWorks = () => {
           </div>
 
           {/* Features Grid */}
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-10 lg:grid-cols-2"> {/* Increased gap for better spacing */}
             {/* First Card */}
-            <div className="relative p-6 rounded-xl border shadow-lg bg-white">
+            <div className="relative p-6 rounded-xl border border-gray-200/80 shadow-xl bg-white/90 backdrop-blur-sm">
               <h2 className="text-xl font-semibold lg:text-2xl mb-6">
                 <span>Create Your Persona</span>{' '}
                 <span className="inline-flex relative gap-2 items-baseline pr-2 pl-8 rounded-full text-emerald-900">
@@ -73,27 +73,35 @@ const HowItWorks = () => {
                 <span>your conversations</span>
               </h2>
 
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Pick a custom AI persona that speaks the Nigerian language you
                 want to practice. Make it fun—like a big cousin who only speaks
                 Igbo or a wise elder fluent in Yoruba.
               </p>
 
-              {/* Demo Window */}
-              <div className="rounded-lg shadow-lg border overflow-hidden">
-                <div className="flex items-center h-8 px-4 border-b bg-white">
-                  <div className="flex gap-2">
-                    <div className="rounded-full bg-red-400 w-2.5 h-2.5" />
-                    <div className="rounded-full bg-yellow-300 w-2.5 h-2.5" />
-                    <div className="rounded-full bg-green-400 w-2.5 h-2.5" />
+              {/* Demo Window 1 */}
+              <div className="rounded-lg shadow-lg border border-gray-200/70 overflow-hidden bg-white">
+                <div className="flex items-center h-8 px-3 py-2.5 md:h-10 border-b border-gray-200/70">
+                  <div className="flex items-center space-x-1.5">
+                    <div className="rounded-full bg-red-400 w-2.5 h-2.5 md:w-3 md:h-3" />
+                    <div className="rounded-full bg-yellow-400 w-2.5 h-2.5 md:w-3 md:h-3" />
+                    <div className="rounded-full bg-green-400 w-2.5 h-2.5 md:w-3 md:h-3" />
                   </div>
                 </div>
-                <div className="aspect-[16/10] bg-white p-4" />
+                <div className="relative aspect-[16/10] bg-gray-50 p-1"> {/* Added slight padding */}
+                  <Image
+                    src="/images/screenshot2.jpg" // Screenshot for the first card
+                    alt="Create Persona Screenshot"
+                    layout="fill"
+                    objectFit="contain" // Use contain to see the whole image
+                    className="rounded-b-md" // Optional: if you want rounded corners only at bottom
+                  />
+                </div>
               </div>
             </div>
 
             {/* Second Card */}
-            <div className="relative p-6 rounded-xl border shadow-lg bg-white">
+            <div className="relative p-6 rounded-xl border border-gray-200/80 shadow-xl bg-white/90 backdrop-blur-sm">
               <h2 className="text-xl font-semibold lg:text-2xl mb-6">
                 Start Chatting{' '}
                 <span className="inline-flex relative gap-2 items-baseline pr-2 pl-8 rounded-full text-emerald-900">
@@ -112,40 +120,48 @@ const HowItWorks = () => {
                 </span>
               </h2>
 
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Jump into fun, real-time convos with your AI. Chat about anything
                 from daily slang to cultural nuances—and watch your confidence
                 skyrocket.
               </p>
 
-              {/* Demo Window */}
-              <div className="rounded-lg shadow-lg border overflow-hidden">
-                <div className="flex items-center h-8 px-4 border-b bg-white">
+              {/* Demo Window 2 */}
+              <div className="rounded-lg shadow-lg border border-gray-200/70 overflow-hidden bg-white">
+                <div className="flex items-center h-8 px-3 py-2.5 md:h-10 border-b border-gray-200/70">
                   <div className="flex gap-2">
-                    <div className="rounded-full bg-red-400 w-2.5 h-2.5" />
-                    <div className="rounded-full bg-yellow-300 w-2.5 h-2.5" />
-                    <div className="rounded-full bg-green-400 w-2.5 h-2.5" />
+                    <div className="rounded-full bg-red-400 w-2.5 h-2.5 md:w-3 md:h-3" />
+                    <div className="rounded-full bg-yellow-400 w-2.5 h-2.5 md:w-3 md:h-3" />
+                    <div className="rounded-full bg-green-400 w-2.5 h-2.5 md:w-3 md:h-3" />
                   </div>
                 </div>
-                <div className="aspect-[16/10] bg-white p-4" />
+                <div className="relative aspect-[16/10] bg-gray-50 p-1"> {/* Added slight padding */}
+                  <Image
+                    src="/images/screenshot1.jpg" // Screenshot for the second card
+                    alt="Start Chatting Screenshot"
+                    layout="fill"
+                    objectFit="contain" // Use contain to see the whole image
+                    className="rounded-b-md" // Optional
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* Testimonial */}
-          <div className="max-w-3xl mx-auto text-center mt-16">
-            <blockquote className="text-2xl md:text-3xl italic text-emerald-900">
+          <div className="max-w-3xl mx-auto text-center mt-16 lg:mt-24"> {/* Increased top margin */}
+            <blockquote className="text-2xl md:text-3xl italic text-emerald-900 leading-snug">
               &ldquo;It&apos;s become the best part of my day—learning my grandma&apos;s language has never been this fun!&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center justify-center gap-4">
               <div className="relative w-12 h-12">
                 <Image
-                  src="/images/kehinde.JPEG"
+                  src="/images/kehinde.JPEG" // Ensure this path is correct
                   alt="Kehinde Abereoje"
-                  fill
-                  className="rounded-full object-cover"
+                  fill // Use fill if parent has fixed dimensions and you want cover/contain behavior
+                  className="rounded-full object-cover" // object-cover will fill and crop, object-contain will fit
                   priority
-                  sizes="48px"
+                  sizes="48px" // Good practice for LCP images
                 />
               </div>
               <div className="text-left">

@@ -1,6 +1,7 @@
 // components/landing/HeroSection.tsx
 "use client"
 import React from 'react';
+import Image from 'next/image'; // Import the Next.js Image component
 
 const HeroSection: React.FC = () => {
   return (
@@ -33,51 +34,54 @@ const HeroSection: React.FC = () => {
         </h1>
 
         <h2 className="px-4 md:px-8 w-full max-w-6xl text-lg font-medium leading-tight text-center lg:text-2xl text-gray-500">
-
-Get fluent fast with your playful AI buddy—at 4x less the cost of the usual apps. Practice real-life convos, perfect your accent, and rediscover hidden gems in Nigerian languages!
+          Get fluent fast with your playful AI buddy—at 4x less the cost of the usual apps. Practice real-life convos, perfect your accent, and rediscover hidden gems in Nigerian languages!
         </h2>
 
         {/* Download Button */}
         <a 
-  href="#download-section" 
-  className="mt-4 flex items-center px-6 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white rounded-full font-medium transition-all hover:scale-[101%] shadow-sm"
-  onClick={(e) => {
-    e.preventDefault();
-    const downloadSection = document.getElementById("download-section");
-    if (downloadSection) {
-      downloadSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-  <span className="flex gap-2 items-center">
-    Download Now
-  </span>
-</a>
+          href="#download-section" 
+          className="mt-4 flex items-center px-6 h-12 bg-gradient-to-br from-emerald-400 to-emerald-500 text-white rounded-full font-medium transition-all hover:scale-[101%] shadow-sm"
+          onClick={(e) => {
+            e.preventDefault();
+            const downloadSection = document.getElementById("download-section");
+            if (downloadSection) {
+              downloadSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          <span className="flex gap-2 items-center">
+            Download Now
+          </span>
+        </a>
       </div>
 
       {/* Demo Cards Container */}
       <div className="relative gap-2 items-center px-4 -mb-16 w-full max-w-4xl sm:px-6 md:-mb-32 md:flex">
-        {/* Original Notes Card */}
-        <div className="flex flex-col gap-1 items-center w-3/5 md:gap-2 md:w-[95%] md:ml-[3%]">
+        {/* Main App Window Card (Single Image) */}
+        <div className="flex flex-col gap-1 items-center w-full md:w-4/5 mx-auto md:gap-2"> {/* Adjusted width and centered */}
           <p className="text-xs font-medium sm:text-base md:text-lg text-gray-500">
-            Learnning + Machine Learning
+            Learning + Machine Learning
           </p>
-          <div className="overflow-hidden rounded-lg shadow-lg flex relative flex-col flex-1 h-full backdrop-blur-lg font-mono bg-white border-0.5 w-full">
+          <div className="overflow-hidden rounded-lg shadow-2xl flex relative flex-col flex-1 h-full backdrop-blur-lg font-mono bg-white/80 border border-gray-200/50 w-full">
             {/* Window Controls */}
-            <div className="flex relative flex-none gap-4 items-center pr-1 pl-2 py-2 md:h-8">
-              <div className="flex items-center w-full space-x-[3%] md:space-x-2">
-                <div className="rounded-full bg-red-400 w-[3%] md:w-2.5 md:h-2.5 aspect-square" />
-                <div className="rounded-full bg-yellow-300 w-[3%] md:w-2.5 md:h-2.5 aspect-square" />
-                <div className="rounded-full bg-green-400 w-[3%] md:w-2.5 md:h-2.5 aspect-square" />
+            <div className="flex relative flex-none gap-1.5 items-center px-3 py-2.5 md:h-10 border-b border-gray-200/70">
+              <div className="flex items-center space-x-1.5">
+                <div className="rounded-full bg-red-400 w-2.5 h-2.5 md:w-3 md:h-3" />
+                <div className="rounded-full bg-yellow-400 w-2.5 h-2.5 md:w-3 md:h-3" />
+                <div className="rounded-full bg-green-400 w-2.5 h-2.5 md:w-3 md:h-3" />
               </div>
+             \
             </div>
-            {/* Card Content */}
-            <div className="relative flex-1 bg-white px-[5%] md:px-8 pt-4 aspect-[16/10] min-h-[300px]">
-              {/* Demo Content */}
-              <div className="space-y-2">
-                <div className="h-6 bg-gray-100 rounded w-3/4" />
-                <div className="h-6 bg-gray-100 rounded w-1/2" />
-                <div className="h-6 bg-gray-100 rounded w-2/3" />
+            {/* Card Content - Single Screenshot */}
+            <div className="relative flex-1 bg-white p-2 sm:p-4 md:p-6 aspect-[16/10] min-h-[300px] sm:min-h-[400px] md:min-h-[500px]">
+              <div className="relative w-full h-full rounded-md overflow-hidden">
+                <Image
+                  src="/images/screenshot3.jpg" 
+                  alt="App Screenshot - Chat with AI"
+                  layout="fill"
+                  objectFit="contain" 
+                  className="transition-transform duration-500 group-hover:scale-105" // Added group-hover for potential parent hover effect
+                />
               </div>
             </div>
           </div>
