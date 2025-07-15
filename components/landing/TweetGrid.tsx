@@ -7,92 +7,85 @@ const tweets: Tweet[] = [
   {
     id: '1',
     author: {
-      name: 'Nat Friedman',
-      handle: '@natfriedman',
+      name: 'Harold Obasi',
+      handle: '@haroldobasi',
       verified: true
     },
-    content:
-      'My Yoruba improved drastically after using @ChataBubble for just a week. I’m hooked!',
+    content: 'My Yoruba improved drastically after using @ChataBubble for just a week. I’m hooked!',
     date: 'Jan 20, 2025'
   },
   {
     id: '2',
     author: {
-      name: 'Guillaume',
-      handle: '@esuchi',
+      name: 'Ella M',
+      handle: '@ellam_lang',
       verified: true
     },
-    content:
-      'Super impressed by Chata Bubble’s AI persona. I’m practicing Igbo every day—feels natural, not forced.',
+    content: 'Super impressed by Chata Bubble’s AI persona. I’m practicing Igbo every day—feels natural, not forced.',
     date: 'Feb 3, 2025'
   },
   {
     id: '3',
     author: {
-      name: 'Ian',
-      handle: '@ianwags',
+      name: 'Waheed K',
+      handle: '@waheed_k',
       verified: true
     },
-    content:
-      'Not sure I’ll ever go back to textbooks. @ChataBubble makes it so easy to learn on the go!',
+    content: 'Not sure I’ll ever go back to textbooks. @ChataBubble makes it so easy to learn on the go!',
     date: 'Mar 15, 2025'
   },
   {
     id: '4',
     author: {
-      name: 'Sasha',
-      handle: '@sasha',
+      name: 'Megan Price',
+      handle: '@megprice_ai',
       verified: true
     },
-    content:
-      'Talking with my grandma in her native dialect used to be awkward. Thanks to @ChataBubble, not anymore!',
+    content: 'Talking with my grandma in her native dialect used to be awkward. Thanks to @ChataBubble, not anymore!',
     date: 'Apr 8, 2025'
   },
   {
     id: '5',
     author: {
-      name: 'Sara Haider',
-      handle: '@sarahaider',
+      name: 'Gauis Msehlia',
+      handle: '@gmsehlia',
       verified: true
     },
-    content:
-      'Chata Bubble is the perfect combo of fun + affordability. I’m brushing up on my Hausa like never before.',
+    content: 'Chata Bubble is the perfect combo of fun + affordability. I’m brushing up on my Hausa like never before.',
     date: 'May 12, 2025'
   },
   {
     id: '6',
     author: {
-      name: 'Chris Parrish',
-      handle: '@chrisparrish',
+      name: 'Victor Akoji',
+      handle: '@akojivictor',
       verified: true
     },
-    content:
-      'It’s basically FaceTime with an AI tutor. Chata Bubble’s voice checks are on another level!',
+    content: 'It’s basically FaceTime with an AI tutor. Chata Bubble’s voice checks are on another level!',
     date: 'Jun 1, 2025'
   },
   {
     id: '7',
     author: {
-      name: 'Nick G',
-      handle: '@nickg',
+      name: 'Heen R',
+      handle: '@heenwrites',
       verified: true
     },
-    content:
-      'Finally—an affordable language app that doesn’t feel like homework. Chata Bubble’s a lifesaver.',
+    content: 'Finally—an affordable language app that doesn’t feel like homework. Chata Bubble’s a lifesaver.',
     date: 'Jul 16, 2025'
   },
   {
     id: '8',
     author: {
-      name: 'Steven Ng',
-      handle: '@stevenng',
+      name: 'Ibrahim Dattijo',
+      handle: '@ibrahimdattijo',
       verified: true
     },
-    content:
-      'I’ve tried everything, but @ChataBubble stands out. It’s legit saving dying languages, one convo at a time.',
+    content: 'I’ve tried everything, but @ChataBubble stands out. It’s legit saving dying languages, one convo at a time.',
     date: 'Aug 3, 2025'
   }
 ];
+
 
 const TweetGrid = () => {
   return (
